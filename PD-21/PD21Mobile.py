@@ -4,7 +4,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 import time
 import unittest
-#from loginmobile import LoginPageMobile
 from mobile.home import HomeMobile
 from mobile.payment import PaymentMobile
 
@@ -31,18 +30,8 @@ class PD21(unittest.TestCase):
         
     def tearDown(self):
         pass
-    
-    
-if __name__ == "__main__":
-    unittest.main()
 
 
 
 
-
-
-
-
-
-#driver.get("http://richard.ourdeal.com.au")
 

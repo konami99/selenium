@@ -12,7 +12,7 @@ class PD21(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome("E:\ourdeal\selenium\chromedriver")
     
-    def xtest_credit_card_transaction_with_existing_member(self):
+    def test_credit_card_transaction_with_existing_member(self):
         driver = self.driver
         #h = Home(driver, "http://richard.ourdeal.com.au/deal/byrontrader-silver-yoga-exercise-ball-with-pump")
         #h.removePopup()
@@ -40,30 +40,30 @@ class PD21(unittest.TestCase):
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
         
-    def xtest_credit_card_transaction_using_Discount_code(self):
+    def test_credit_card_transaction_using_Discount_code(self):
         driver = self.driver
         h = Home(driver,"http://richard.ourdeal.com.au/deal/byrontrader-silver-yoga-exercise-ball-with-pump")
         h.removePopup()
-        h.sleep(3)
+        time.sleep(3)
         #
         h.logIn("konami99@gmail.com","543210")
         
         paymentPage = h.clickBuy()
         paymentPage.applyDiscountCode()
         paymentPage.applyCredit()
-        h.sleep(5)
+        time.sleep(3)
         paymentPage.enterDealerLocation()
         paymentPage.enterCustomData()
         paymentPage.enterPhone()
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
     
-    def xtest_Credit_card_transaction_and_then_cancelling_payment_on_credit_payment_screen(self):
+    def test_Credit_card_transaction_and_then_cancelling_payment_on_credit_payment_screen(self):
         
         driver = self.driver
         h = Home(driver,"http://richard.ourdeal.com.au/deal/quit-cigarettes-forever-hypnotherapy-session")
         h.removePopup()
-        h.sleep(3)
+        time.sleep(3)
         #
         h.logIn("konami99@gmail.com","543210")
         
@@ -73,26 +73,26 @@ class PD21(unittest.TestCase):
         payFlowPage.enterCreditCardDetail()
         payFlowPage.cancelPayment()
         
-    def xtest_Credit_card_transaction_using_OD_Credit(self):
+    def test_Credit_card_transaction_using_OD_Credit(self):
         driver = self.driver
         h = Home(driver,"http://richard.ourdeal.com.au/deal/four-seasons-tennis-school-three-hours-of-group-tennis-lessons")
         h.removePopup()
-        h.sleep(3)
+        time.sleep(3)
         h.logIn("konami99@gmail.com","543210")
         paymentPage = h.clickBuy()
         paymentPage.applyCredit()
-        h.sleep(3)
+        time.sleep(3)
         paymentPage.enterDealerLocation()
         paymentPage.enterCustomData()
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
     
     
-    def xtest_Custom_Fields(self):
+    def test_Custom_Fields(self):
         driver = self.driver
         h = Home(driver,"http://richard.ourdeal.com.au/deal/quit-cigarettes-forever-hypnotherapy-session")
         h.removePopup()
-        h.sleep(3)
+        time.sleep(3)
         h.logIn("konami99@gmail.com","543210")
         paymentPage = h.clickBuy()
         paymentPage.enterShippingDetails()
@@ -102,11 +102,11 @@ class PD21(unittest.TestCase):
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
         
-    def xtest_Paypal(self):
+    def test_Paypal(self):
         driver = self.driver
         h = Home(driver,"http://richard.ourdeal.com.au/deal/quit-cigarettes-forever-hypnotherapy-session")
         h.removePopup()
-        h.sleep(3)
+        time.sleep(3)
         h.logIn("konami99@gmail.com","543210")
         paymentPage = h.clickBuy()
         paymentPage.enterShippingDetails()
@@ -119,16 +119,3 @@ class PD21(unittest.TestCase):
         pass
     
     
-if __name__ == "__main__":
-    unittest.main()
-
-
-
-
-
-
-
-
-
-#driver.get("http://richard.ourdeal.com.au")
-
