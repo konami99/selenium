@@ -12,9 +12,7 @@ class Home:
         elem0 = self._driver.find_element_by_xpath('//*[@id="cboxClose"]')
         elem0.click()
         
-        
-    def sleep(self,seconds):
-        time.sleep(seconds)
+    
      
     def logIn(self, email, password):
        
