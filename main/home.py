@@ -3,8 +3,9 @@ from payment import PaymentPage
 
 class Home:
     
-    def __init__(self,driver):
+    def __init__(self,driver,url):
         self._driver = driver
+        self._driver.get(url)
         #if (self._driver.title != 'OurDeal, great daily deals! Enjoy amazing discounts on Restaurants, Massages, Spas, Travel, Activities & More!'):
         #self._driver.get(url)
     

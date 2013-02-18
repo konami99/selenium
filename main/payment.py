@@ -116,7 +116,7 @@ class PaymentPage:
         count = 0
         for option in cutomDataOptions:
             count+=1
-            if(count==4):
+            if(count==2):
                 option.click()
                 
     def enterBuyerOptIn(self):

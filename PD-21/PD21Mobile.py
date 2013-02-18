@@ -7,7 +7,7 @@ import unittest
 from mobile.home import HomeMobile
 from mobile.payment import PaymentMobile
 
-class PD21(unittest.TestCase):
+class PD21Mobile(unittest.TestCase):
     
     def setUp(self):
        
