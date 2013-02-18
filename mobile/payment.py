@@ -30,7 +30,12 @@ class PaymentMobile:
         creditCheckbox.click()
     
     def applyDiscountCode(self):
-        pass
+        discountCodeOptions = self._driver.find_element_by_xpath('//*[@id="discCode"]/option')
+        count = 0
+        for option in discountCodeOptions:
+            count+=1
+            if(count==2):
+                option.click()
     
     
     def enterPhone(self):

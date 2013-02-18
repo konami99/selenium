@@ -15,7 +15,32 @@ class PD221Mobile(unittest.TestCase):
     def tearDown(self):
         pass
     
-    def test_credit_card_transaction_with_existing_member(self):
+    def xtest_credit_card_transaction_with_existing_member(self):
+        driver = self.driver
+        h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/parcfitness-3-month-gym-membership-bellevue-hill-rose-bay-and-gymtime-balgowlah-locations-feb")
+        paymentMobile = h.clickBuy()
+        
+        paymentMobile.login()
+        paymentMobile.selectQuantity(2)
+        paymentMobile.enterDealerLocation()
+        paymentMobile.applyCredit()
+        #paymentMobile.enterPhone()
+        #paymentMobile.agreeTC()
+        #payflowMobile = paymentMobile.clickCheckOutWithCreditCard()
+        #payflowMobile.enterCreditCardDetail()
+        
+        
+    def xtest_credit(self):
+        driver = self.driver
+        h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/parcfitness-3-month-gym-membership-bellevue-hill-rose-bay-and-gymtime-balgowlah-locations-feb")
+        paymentMobile = h.clickBuy()
+        
+        paymentMobile.login()
+        paymentMobile.selectQuantity(2)
+        paymentMobile.enterDealerLocation()
+        paymentMobile.applyCredit()
+        
+    def xtest_discount_code(self):
         driver = self.driver
         h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/parcfitness-3-month-gym-membership-bellevue-hill-rose-bay-and-gymtime-balgowlah-locations-feb")
         paymentMobile = h.clickBuy()
@@ -23,8 +48,19 @@ class PD221Mobile(unittest.TestCase):
         paymentMobile.login()
         paymentMobile.selectQuantity(3)
         paymentMobile.enterDealerLocation()
-        #paymentMobile.applyCredit()
-        #paymentMobile.enterPhone()
-        #paymentMobile.agreeTC()
-        payflowMobile = paymentMobile.clickCheckOutWithCreditCard()
-        payflowMobile.enterCreditCardDetail()
+        paymentMobile.applyDiscountCode()
+        
+        
+    def test_discount_code_plus_credit(self):
+        driver = self.driver
+        h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/nifty-spot-in-car-iphone--to-stereo-transmitter")
+        paymentMobile = h.clickBuy()
+        
+        paymentMobile.login()
+        paymentMobile.selectQuantity(5)
+        
+        #paymentMobile.applyDiscountCode()
+        paymentMobile.applyCredit()
+        paymentMobile.enterPhone()
+        payFlowPage = paymentMobile.clickCheckOutWithCreditCard()
+        payFlowPage.enterCreditCardDetail()

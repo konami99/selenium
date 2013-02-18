@@ -18,7 +18,7 @@ class PD221(unittest.TestCase):
         s = SigninPage(driver, "https://richard.ourdeal.com.au/signin/")
         s.signin("konami99@gmail.com", "543210")
         
-        h = Home(driver,"http://richard.ourdeal.com.au/deal/sna-tours-nine-day-tour-of-china-and-dubai")
+        h = Home(driver,"http://richard.ourdeal.com.au/deal/the-break-beach-houses-margaret-river-five-night-escape")
         paymentPage = h.clickBuy()
         paymentPage.selectMultiPricePointDeal(1)
         paymentPage.enterCustomData()
