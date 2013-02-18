@@ -36,7 +36,9 @@ class PaymentPage:
         postcode.send_keys("2222")
         
     def applyDiscountCode(self):
-        discountCode = self._driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div[2]/div/div[4]/div[2]/a')
+        #discountCode = self._driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div[2]/div/div[4]/div[2]/a')
+        
+        discountCode = self._driver.find_element_by_xpath('//*[@class="discountCodeRight"]/a[1]')
         discountCode.click()
         
         
@@ -106,7 +108,7 @@ class PaymentPage:
         count = 0
         for option in locationOptions:
             count+=1
-            if(count==3):
+            if(count==2):
                 option.click()
       
       
