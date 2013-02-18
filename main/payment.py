@@ -36,9 +36,7 @@ class PaymentPage:
         postcode.send_keys("2222")
         
     def applyDiscountCode(self):
-        #discountCode = self._driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div[2]/div/div[4]/div[2]/a')
-        
-        discountCode = self._driver.find_element_by_xpath('//*[@class="discountCodeRight"]/a[1]')
+        discountCode = self._driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div[2]/div/div[4]/div[2]/a')
         discountCode.click()
         
         
@@ -123,3 +121,10 @@ class PaymentPage:
                 
     def enterBuyerOptIn(self):
         pass
+    
+    
+    def enterQuantity(self, quantity):
+        increaseButton = self._driver.find_element_by_id('inc')
+        for count in range(1, quantity):
+            increaseButton.click()
+            
