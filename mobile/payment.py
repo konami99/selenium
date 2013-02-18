@@ -60,3 +60,9 @@ class PaymentMobile:
             count+=1
             if(count==2):
                 option.click()
+                
+    def selectQuantity(self, quantityz):
+        quantityOptions = self._driver.find_elements_by_xpath('//*[@id="quantity"]/option')
+        for option in quantityOptions: 
+            if(int(option.get_attribute("value"))==quantityz):
+                option.click()
