@@ -21,7 +21,9 @@ class PD221Mobile(unittest.TestCase):
         paymentMobile = h.clickBuy()
         
         paymentMobile.login()
+        paymentMobile.selectQuantity(3)
         paymentMobile.enterDealerLocation()
         #paymentMobile.enterPhone()
         #paymentMobile.agreeTC()
-        #paymentMobile.clickCheckOutWithCreditCard()
+        payflowMobile = paymentMobile.clickCheckOutWithCreditCard()
+        payflowMobile.enterCreditCardDetail()

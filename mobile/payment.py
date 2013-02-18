@@ -1,5 +1,6 @@
 import time
 from menu import Menu
+from payflow import PayFlowMobile
 
 
 class PaymentMobile:
@@ -43,7 +44,9 @@ class PaymentMobile:
     def clickCheckOutWithCreditCard(self):
         elem1 = self._driver.find_element_by_link_text("Check out with Credit Card")
         elem1.click()
-        
+        return PayFlowMobile(self._driver)
+    
+    
     
     def enterDealerLocation(self):
         
