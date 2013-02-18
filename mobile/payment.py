@@ -43,3 +43,20 @@ class PaymentMobile:
     def clickCheckOutWithCreditCard(self):
         elem1 = self._driver.find_element_by_link_text("Check out with Credit Card")
         elem1.click()
+        
+    
+    def enterDealerLocation(self):
+        
+        stateOptions = self._driver.find_elements_by_xpath('//*[@id="DealerLocationStateID"]/option')
+        count = 0
+        for option in stateOptions:
+            count+=1
+            if(count==1):
+                option.click()
+    
+        count = 0
+        locationOptions = self._driver.find_elements_by_xpath('//*[@id="DealerLocationID"]/option')
+        for option in locationOptions: 
+            count+=1
+            if(count==2):
+                option.click()

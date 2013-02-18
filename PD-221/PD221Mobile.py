@@ -8,3 +8,20 @@ from mobile.home import HomeMobile
 from mobile.payment import PaymentMobile
 
 class PD221Mobile(unittest.TestCase):
+    
+    def setUp(self):
+        self.driver = webdriver.Chrome("E:\ourdeal\selenium\chromedriver")
+        
+    def tearDown(self):
+        pass
+    
+    def test_credit_card_transaction_with_existing_member(self):
+        driver = self.driver
+        h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/parcfitness-3-month-gym-membership-bellevue-hill-rose-bay-and-gymtime-balgowlah-locations-feb")
+        paymentMobile = h.clickBuy()
+        
+        paymentMobile.login()
+        paymentMobile.enterDealerLocation()
+        #paymentMobile.enterPhone()
+        #paymentMobile.agreeTC()
+        #paymentMobile.clickCheckOutWithCreditCard()
