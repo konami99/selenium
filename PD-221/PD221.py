@@ -12,19 +12,20 @@ class PD221(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome("E:\ourdeal\selenium\chromedriver")
         
-    def xtest_credit_card_transaction_with_existing_member(self):
+    def test_credit_card_transaction_with_existing_member(self):
         driver = self.driver
         
         s = SigninPage(driver, "https://richard.ourdeal.com.au/signin/")
         s.signin("konami99@gmail.com", "543210")
         
-        h = Home(driver,"http://richard.ourdeal.com.au/deal/spot-shop-ivew-book-reader")
+        h = Home(driver,"http://richard.ourdeal.com.au/deal/sna-tours-nine-day-tour-of-china-and-dubai")
         paymentPage = h.clickBuy()
+        paymentPage.selectMultiPricePointDeal(1)
         paymentPage.enterCustomData()
         paymentPage.enterPhone()
         paymentPage.enterDealerLocation()
         paymentPage.enterShippingDetails()
-        paymentPage.enterQuantity(3)
+        paymentPage.enterQuantity(1)
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
         
@@ -66,7 +67,7 @@ class PD221(unittest.TestCase):
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
         
-    def test_credits_plus_discount_code(self):
+    def xtest_credits_plus_discount_code(self):
         driver = self.driver
         
         s = SigninPage(driver, "https://richard.ourdeal.com.au/signin/")
