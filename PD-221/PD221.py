@@ -47,7 +47,7 @@ class PD221(unittest.TestCase):
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
     
-    def test_credits(self):
+    def xtest_credits(self):
         
         driver = self.driver
         
@@ -61,6 +61,26 @@ class PD221(unittest.TestCase):
         #paymentPage.enterPhone()
         paymentPage.enterDealerLocation()
         #paymentPage.enterShippingDetails()
+        paymentPage.applyCredit()
+        time.sleep(3)
+        payFlowPage = paymentPage.clickCheckOutWithCreditCard()
+        payFlowPage.enterCreditCardDetail()
+        
+    def test_credits_plus_discount_code(self):
+        driver = self.driver
+        
+        s = SigninPage(driver, "https://richard.ourdeal.com.au/signin/")
+        s.signin("konami99@gmail.com", "543210")
+        
+        h = Home(driver,"http://richard.ourdeal.com.au/deal/convicts-cruise-unique-sydney-cruises")
+        paymentPage = h.clickBuy()
+        paymentPage.enterQuantity(2)
+        #paymentPage.enterCustomData()
+        #paymentPage.enterPhone()
+        paymentPage.enterDealerLocation()
+        #paymentPage.enterShippingDetails()
+        paymentPage.applyDiscountCode()
+        time.sleep(3)
         paymentPage.applyCredit()
         time.sleep(3)
         payFlowPage = paymentPage.clickCheckOutWithCreditCard()

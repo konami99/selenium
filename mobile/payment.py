@@ -26,8 +26,8 @@ class PaymentMobile:
         elem4.click()
         
     def applyCredit(self):
-        pass
-    
+        creditCheckbox = self._driver.find_element_by_xpath('//*[@id="formPayment"]/div[1]/div[3]/div/div[1]/div/label/span/span[2]')
+        creditCheckbox.click()
     
     def applyDiscountCode(self):
         pass
