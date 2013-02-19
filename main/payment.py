@@ -5,11 +5,11 @@ class PaymentPage:
     def __init__(self,driver):
         self._driver = driver
         
-        try:
+        #try:
             #<h2>Purchase Information</h2>
-            elem = self._driver.find_element_by_xpath('//*[@id="formPayment"]/div[1]/h2')
-        except NoSuchElementException:
-            raise RuntimeError("this is not PaymentPage")
+            #elem = self._driver.find_element_by_xpath('//*[@id="formPayment"]/div[1]/h2')
+        #except NoSuchElementException:
+            #raise RuntimeError("this is not PaymentPage")
         
     def clickCheckOutWithCreditCard(self):
         elem1 = self._driver.find_element_by_xpath('//*[@id="formPaymentSubmit"]')
@@ -106,7 +106,7 @@ class PaymentPage:
         count = 0
         for option in locationOptions:
             count+=1
-            if(count==3):
+            if(count==2):
                 option.click()
       
       
@@ -116,8 +116,30 @@ class PaymentPage:
         count = 0
         for option in cutomDataOptions:
             count+=1
-            if(count==4):
+            if(count==2):
                 option.click()
                 
     def enterBuyerOptIn(self):
+        pass
+    
+    
+    def enterQuantity(self, quantity):
+        increaseButton = self._driver.find_element_by_id('inc')
+        for count in range(1, quantity):
+            increaseButton.click()
+            
+    def selectMultiPricePointDeal(self, index):
+        multiPricePointDeals = self._driver.find_elements_by_class_name('btn-buy-colorbox')
+        count = 0
+        for deal in multiPricePointDeals:
+            count+=1
+            if(count==index):
+                deal.click()
+    
+    def tickOptInText(self, bool):
+        optInCheckBox = self._driver.find_element_by_id('buyeroptin')
+        if(bool):
+            optInCheckBox.click()
+            
+    def buyAsGift(self):
         pass

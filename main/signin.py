@@ -28,4 +28,4 @@ class SigninPage:
        elem3 = self._driver.find_element_by_xpath('//*[@id="signin"]/div[1]/a/img')
        elem3.click()
        
-       return Home(self._driver)
+       #return Home(self._driver)
