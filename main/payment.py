@@ -135,4 +135,11 @@ class PaymentPage:
             count+=1
             if(count==index):
                 deal.click()
+    
+    def tickOptInText(self, bool):
+        optInCheckBox = self._driver.find_element_by_id('buyeroptin')
+        if(bool):
+            optInCheckBox.click()
             
+    def buyAsGift(self):
+        pass

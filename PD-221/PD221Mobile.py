@@ -51,7 +51,7 @@ class PD221Mobile(unittest.TestCase):
         paymentMobile.applyDiscountCode()
         
         
-    def test_discount_code_plus_credit(self):
+    def xtest_discount_code_plus_credit(self):
         driver = self.driver
         h = HomeMobile(driver,"http://richard.ourdeal.com.au/deal/nifty-spot-in-car-iphone--to-stereo-transmitter")
         paymentMobile = h.clickBuy()
@@ -67,3 +67,7 @@ class PD221Mobile(unittest.TestCase):
         paymentMobile.enterPhone()
         payFlowPage = paymentMobile.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
+        
+        
+        
+    
