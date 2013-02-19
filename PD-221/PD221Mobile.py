@@ -58,9 +58,12 @@ class PD221Mobile(unittest.TestCase):
         
         paymentMobile.login()
         paymentMobile.selectQuantity(5)
-        
+        paymentMobile.enterShippingDetails()
+        paymentMobile.enterDealerLocation()
+        paymentMobile.enterCustomData()
+        paymentMobile.tickOptInText(0)
         #paymentMobile.applyDiscountCode()
-        paymentMobile.applyCredit()
+        #paymentMobile.applyCredit()
         paymentMobile.enterPhone()
         payFlowPage = paymentMobile.clickCheckOutWithCreditCard()
         payFlowPage.enterCreditCardDetail()
